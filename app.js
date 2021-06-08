@@ -1,28 +1,12 @@
-const fs = require('fs');
-const generatePage = require('./src/page-template.js');
-const profileDataArgs = process.argv.slice(2, process.argv.length);
-const [name, github] = profileDataArgs;
+const inquirer = require('inquirer');
 
+// const fs = require('fs');
+// const generatePage = require('./src/page-template');
 
-const generatePageCSS = () => {
-    return `
-    a {
-        text-decoration: none;
-        color: black;
-    }
-    `;
-};
+// const pageHTML = generatePage(name, github);
 
-fs.writeFile("./index.html", generatePage(name, github), "utf8", err =>{
-    if (err) throw err;
+// fs.writeFile('./index.html', pageHTML, err => {
+//   if (err) throw err;
 
-    console.log('HTML GENERATION COMPLETE');
-
-});
-
-fs.writeFile("./assets/style.css", generatePageCSS(), "utf8", err =>{
-    if (err) throw err;
-
-    console.log('CSS GENERATION COMPLETE');
-
-});
+//   console.log('Portfolio complete! Check out index.html to see the output!');
+// });
